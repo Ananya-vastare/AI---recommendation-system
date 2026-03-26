@@ -1,0 +1,139 @@
+/* Reset & Body */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eafaf1;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.container {
+  margin-left: 250px; /* Space for your sidebar */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centered vertically */
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🌿 Animated Blobs */
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+.container::before {
+  width: 400px; height: 400px;
+  background: rgba(167, 243, 208, 0.6);
+  top: -10%; left: -5%;
+}
+
+.container::after {
+  width: 500px; height: 500px;
+  background: rgba(110, 231, 183, 0.5);
+  bottom: -10%; right: -5%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(40px, 40px); }
+}
+
+/* Glass Card - New Dimensions */
+.upload-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  padding: 60px 50px;
+  border-radius: 35px;
+  width: 100%;
+  max-width: 700px; /* Unique wider dimension */
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(6, 95, 70, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #064e3b;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+/* 🧪 Unique Pill Search Bar */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 8px 8px 8px 24px;
+  border-radius: 100px; /* Full pill shape */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04), 
+              inset 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.search-wrapper:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+}
+
+.search-input-unique {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 17px;
+  color: #1f2937;
+  outline: none;
+  padding-right: 15px;
+}
+
+.search-input-unique::placeholder {
+  color: #9ca3af;
+}
+
+/* Button Integrated Inside */
+.submit-btn-unique {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s active;
+  font-size: 15px;
+}
+
+.submit-btn-unique:hover:not(:disabled) {
+  background-color: #059669;
+}
+
+.submit-btn-unique:active {
+  transform: scale(0.96);
+}
+
+.submit-btn-unique:disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+}
