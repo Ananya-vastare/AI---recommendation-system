@@ -1,2 +1,2 @@
-# AI---recommendation-system
+# AI-recommendation-system
 This is for gsoc 
